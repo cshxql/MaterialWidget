@@ -1,0 +1,7 @@
+<resources>
+
+    <dimen name="headerbar_height">56dp</dimen>
+    <dimen name="preference_item_minheight">56dp</dimen>
+    <dimen name="preference_title_textsize">15sp</dimen>
+
+</resources>

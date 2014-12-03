@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:material="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/headerbar_height"
+        android:background="@color/headbar_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <com.lion.material.widget.LImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:enabled="false"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:src="@drawable/ic_launcher"
+            material:widget_animColor="#aa9c27b0"
+            material:widget_type="left" />
+
+        <TextView
+            style="@style/headerbar_text_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Material Style" />
+
+        <com.lion.material.widget.LButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="Setting"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            material:widget_animColor="#1affffff"
+            material:widget_type="right" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.lion.material.widget.PreferenceNormal
+                android:id="@+id/main_item_lbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                material:preference_show_divider="true"
+                material:preference_title="@string/main_item_lbutton" />
+
+            <com.lion.material.widget.PreferenceNormal
+                android:id="@+id/main_item_limagebutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                material:preference_show_divider="true"
+                material:preference_title="@string/main_item_limagebutton" />
+
+            <com.lion.material.widget.PreferenceNormal
+                android:id="@+id/main_item_lframelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                material:preference_show_divider="true"
+                material:preference_title="@string/main_item_lframelayout" />
+
+            <com.lion.material.widget.PreferenceNormal
+                android:id="@+id/main_item_lpreference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                material:preference_show_divider="false"
+                material:preference_title="@string/main_item_lpreference" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

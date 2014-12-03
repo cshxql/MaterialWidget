@@ -1,0 +1,174 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:material="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/headerbar_height"
+        android:background="@color/headbar_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <com.lion.material.widget.LImageButton
+            android:id="@+id/header_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:src="@drawable/icon_header_back"
+            android:text="Back"
+            material:widget_animColor="#aa9c27b0"
+            material:widget_type="left" />
+
+        <TextView
+            style="@style/headerbar_text_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/lframelayout_title" />
+
+        <com.lion.material.widget.LFrameLayout
+            android:id="@+id/header_framelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="25dp"
+            android:paddingRight="15dp"
+            material:widget_animColor="@color/color_anim_white"
+            material:widget_type="right" >
+
+            <ImageView
+                android:id="@+id/header_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_header_pause"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/header_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_header_play" />
+        </com.lion.material.widget.LFrameLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:id="@+id/framelayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/lframelayout_toast_system_button"
+                    android:textColor="@color/color_black87"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:src="@drawable/icon_arrow_right" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#dcdcdc" />
+
+            <com.lion.material.widget.LFrameLayout
+                android:id="@+id/framelayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                material:widget_animColor="@color/color_anim_lick_header" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/hello_world"
+                    android:textColor="@color/color_black87"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:src="@drawable/icon_arrow_right" />
+            </com.lion.material.widget.LFrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#dcdcdc" />
+
+            <com.lion.material.widget.LFrameLayout
+                android:id="@+id/framelayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                material:widget_background="#009688"
+                material:widget_animColor="@color/color_anim_lick_header" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/lbutton_wicth_background_color"
+                    material:widget_background="@color/headbar_bg"
+                    android:textColor="@color/color_black87"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:src="@drawable/icon_arrow_right" />
+            </com.lion.material.widget.LFrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#dcdcdc" />
+
+            <com.lion.material.widget.LFrameLayout
+                android:id="@+id/framelayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                material:widget_animColor="@color/color_anim_lick_header" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/lbutton_change_color"
+                    android:textColor="@color/color_black87"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:src="@drawable/icon_arrow_right" />
+            </com.lion.material.widget.LFrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MaterialDemo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Main -->
+    <string name="main_item_lbutton">Material Button</string>
+    <string name="main_item_limagebutton">Material ImageButton</string>
+    <string name="main_item_lframelayout">Material FrameLayout</string>
+    <string name="main_item_lpreference">Material Preference</string>
+
+    <!-- LButton -->
+    <string name="lbutton_back">Back</string>
+    <string name="lbutton_title">Material Button</string>
+    <string name="lbutton_menu">This is a long menu</string>
+    <string name="lbutton_sytem_style">System style</string>
+    <string name="lbutton_enabled">Enabled</string>
+    <string name="lbutton_disabled">Disabled</string>
+    <string name="lbutton_wicth_background_color">With background color</string>
+    <string name="lbutton_change_color">Change color dynamically</string>
+    <string name="lbutton_tall">This is a tall button!</string>
+    <string name="lbutton_toast_system_button">This is system style Button!</string>
+
+    <!-- LImageButton -->
+    <string name="limagebutton_title">Material ImageButton</string>
+    <string name="limagebutton_toast_system_button">This is system style ImageButton!</string>
+
+    <!-- LFrameLayout -->
+    <string name="lframelayout_title">Material FrameLayout</string>
+    <string name="lframelayout_toast_system_button">This is system style FrameLayout!</string>
+
+    <!-- LPreference -->
+    <string name="lpreference_title">Material Preference</string>
+    <string name="lpreference_checkbox_title">Checkbox</string>
+    <string name="lpreference_checkbox_summary">status:true</string>
+    <string name="lpreference_normal_title">Normal</string>
+    <string name="lpreference_normal_summary">this is normal!</string>
+    <string name="lpreference_toast_normal_click">Click preference item!</string>
+
+</resources>

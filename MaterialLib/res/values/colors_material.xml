@@ -1,0 +1,27 @@
+<resources>
+
+    <drawable name="transparent">#00000000</drawable>
+    <drawable name="aaa">#00ff00</drawable>
+    <drawable name="bbb">#ff0000</drawable>
+
+    <color name="statusbar_bg">#0394D6</color>
+    <color name="root_bg">#ffffff</color>
+    <color name="headbar_bg">#673ab7</color>
+    <color name="color_anim_lick_header">#1d311b92</color>
+    <color name="color_black87">#de000000</color>
+    <color name="color_black54">#8a000000</color>
+    <color name="color_anim_black">#1d000000</color>
+    <color name="color_anim_white">#1dffffff</color>
+    <!--
+    blue grey
+     <color name="headbar_bg">#607d8b</color>
+    <color name="color_anim_lick_header">#1d263238</color>    -->
+    
+    
+    <color name="list_diver_bg">#dcdcdc</color>
+    <color name="preference_title_text_disable">#3d000000</color>
+    <color name="preference_title_text_normal">#de000000</color>
+    <color name="preference_summary_text_disable">#8a000000</color>
+    <color name="preference_summary_text_normal">#de000000</color>
+
+</resources>
