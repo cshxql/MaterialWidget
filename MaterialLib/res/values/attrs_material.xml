@@ -8,6 +8,8 @@
             <enum name="normal" value="0" />
             <enum name="left" value="1" />
             <enum name="right" value="2" />
+            <enum name="tab" value="3" />
+            <enum name="center" value="4" />
         </attr>
     </declare-styleable>
     <declare-styleable name="PreferenceStyle">

@@ -58,10 +58,10 @@
 
             <com.lion.material.widget.LImageButton
                 android:id="@+id/imagebutton2"
-                android:layout_width="200dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_launcher"
-                material:widget_animColor="#aaff5722" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                material:widget_background="@drawable/ic_launcher"
+                 />
 
             <com.lion.material.widget.LImageButton
                 android:id="@+id/imagebutton3"
