@@ -65,6 +65,10 @@ Usage
 		}
 	}
 	```
-             
+  
+  Known bug
+  ==============
+  * 1.Singleline has some bug but i don't know why, if you find this bug reason please tell me,TKS!
+  * please user maxLine="1" instead of singleLine="true"
             
             
