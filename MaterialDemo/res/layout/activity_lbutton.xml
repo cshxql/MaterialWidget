@@ -19,6 +19,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="@string/lbutton_back"
+            android:textColor="@color/color_normal"
             material:widget_animColor="@color/color_anim_white"
             material:widget_type="left" />
 
@@ -38,6 +39,7 @@
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:text="@string/lbutton_menu"
+            android:textColor="@color/color_normal"
             material:widget_animColor="@color/color_anim_white"
             material:widget_type="right" />
     </LinearLayout>
@@ -58,31 +60,39 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="20dp"
+                android:textColor="@color/color_normal"
                 android:text="@string/lbutton_sytem_style"
-                android:textColor="#000000"
                 android:textSize="15sp" />
 
             <com.lion.material.widget.LButton
                 android:id="@+id/button2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
                 android:gravity="center"
                 android:text="@string/lbutton_enabled"
-                android:textColor="#000000"
+                android:textColor="@color/color_normal"
                 android:textSize="15sp"
                 material:widget_animColor="#1a000000"
-                material:widget_background="@drawable/selecter_bg_pro_token_btn" />
+                material:widget_background="#673ab7" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="@string/lbutton_wicth_background_color"
+                android:textColor="@color/color_normal" />
 
             <com.lion.material.widget.LButton
                 android:id="@+id/button3"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:gravity="center"
                 android:padding="20dp"
-                android:text="@string/lbutton_wicth_background_color"
-                android:textColor="#000000"
+                android:textColor="@color/color_normal"
                 android:textSize="20sp"
-                material:widget_animColor="#ccffffff"
                 material:widget_background="@drawable/icon_add" />
 
             <com.lion.material.widget.LButton
@@ -92,16 +102,16 @@
                 android:gravity="center"
                 android:padding="20dp"
                 android:text="@string/lbutton_change_color"
-                android:textColor="#000000"
                 android:textSize="20sp"
+                android:textColor="@color/color_normal"
                 material:widget_animColor="#1a000000" />
 
             <com.lion.material.widget.LButton
                 android:layout_width="60dp"
                 android:layout_height="200dp"
                 android:gravity="center"
+                android:textColor="@color/color_normal"
                 android:text="@string/hello_world"
-                android:textColor="#000000"
                 android:textSize="20sp"
                 material:widget_animColor="#bbff2d6f" />
         </LinearLayout>

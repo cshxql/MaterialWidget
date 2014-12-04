@@ -6,6 +6,8 @@
     <string name="action_settings">Settings</string>
 
     <!-- Main -->
+    <string name="main_title">Material Style</string>
+    <string name="main_setting">Setting</string>
     <string name="main_item_lbutton">Material Button</string>
     <string name="main_item_limagebutton">Material ImageButton</string>
     <string name="main_item_lframelayout">Material FrameLayout</string>

@@ -27,57 +27,70 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Material Style" />
+            android:text="@string/main_title" />
 
         <com.lion.material.widget.LButton
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:text="Setting"
-            android:textColor="#ffffff"
+            android:text="@string/main_setting"
+            android:textColor="@color/color_normal"
             android:textSize="12sp"
             material:widget_animColor="#1affffff"
             material:widget_type="right" />
     </LinearLayout>
 
-    <ScrollView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <com.lion.material.widget.PreferenceNormal
+                    android:id="@+id/main_item_lbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    material:preference_show_divider="true"
+                    material:preference_title="@string/main_item_lbutton" />
+
+                <com.lion.material.widget.PreferenceNormal
+                    android:id="@+id/main_item_limagebutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    material:preference_show_divider="true"
+                    material:preference_title="@string/main_item_limagebutton" />
+
+                <com.lion.material.widget.PreferenceNormal
+                    android:id="@+id/main_item_lframelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    material:preference_show_divider="true"
+                    material:preference_title="@string/main_item_lframelayout" />
+
+                <com.lion.material.widget.PreferenceNormal
+                    android:id="@+id/main_item_lpreference"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    material:preference_show_divider="false"
+                    material:preference_title="@string/main_item_lpreference" />
+            </LinearLayout>
+        </ScrollView>
+
+        <com.lion.material.widget.LImageButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <com.lion.material.widget.PreferenceNormal
-                android:id="@+id/main_item_lbutton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                material:preference_show_divider="true"
-                material:preference_title="@string/main_item_lbutton" />
-
-            <com.lion.material.widget.PreferenceNormal
-                android:id="@+id/main_item_limagebutton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                material:preference_show_divider="true"
-                material:preference_title="@string/main_item_limagebutton" />
-
-            <com.lion.material.widget.PreferenceNormal
-                android:id="@+id/main_item_lframelayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                material:preference_show_divider="true"
-                material:preference_title="@string/main_item_lframelayout" />
-
-            <com.lion.material.widget.PreferenceNormal
-                android:id="@+id/main_item_lpreference"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                material:preference_show_divider="false"
-                material:preference_title="@string/main_item_lpreference" />
-        </LinearLayout>
-    </ScrollView>
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            material:widget_background="@drawable/icon_add" />
+    </FrameLayout>
 
 </LinearLayout>
