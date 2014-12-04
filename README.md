@@ -11,6 +11,12 @@ Developed By
 ==============
 Lion - cshxql@gmail.com
 
+Preview
+==============
+![](https://github.com/cshxql/MaterialWidget/raw/master/Preview Gif/button.gif)
+![](https://github.com/cshxql/MaterialWidget/raw/master/Preview Gif/checkbox.gif) 
+![](https://github.com/cshxql/MaterialWidget/raw/master/Preview Gif/framelayout.gif) 
+
 Usage
 ==============
 * 1.Include library
