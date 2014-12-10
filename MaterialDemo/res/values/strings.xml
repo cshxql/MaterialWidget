@@ -8,10 +8,6 @@
     <!-- Main -->
     <string name="main_title">Material Style</string>
     <string name="main_setting">Setting</string>
-    <string name="main_item_lbutton">Material Button</string>
-    <string name="main_item_limagebutton">Material ImageButton</string>
-    <string name="main_item_lframelayout">Material FrameLayout</string>
-    <string name="main_item_lpreference">Material Preference</string>
 
     <!-- LButton -->
     <string name="lbutton_back">Back</string>
@@ -40,5 +36,13 @@
     <string name="lpreference_normal_title">Normal</string>
     <string name="lpreference_normal_summary">this is normal!</string>
     <string name="lpreference_toast_normal_click">Click preference item!</string>
+
+    <!-- LDrawer -->
+    <string name="ldrawer_title">Material Drawer</string>
+    <string name="ldrawer_item1">MenuItem One</string>
+    <string name="ldrawer_item2">MenuItem Two</string>
+    <string name="ldrawer_item3">MenuItem Three</string>
+    <string name="ldrawer_item4">MenuItem Four</string>
+    <string name="ldrawer_right_content">This is right DrawerLayout</string>
 
 </resources>

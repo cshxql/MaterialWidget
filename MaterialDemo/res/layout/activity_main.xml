@@ -2,7 +2,7 @@
     xmlns:material="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
+    android:background="#DADADA"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -12,14 +12,14 @@
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
-        <com.lion.material.widget.LImageButton
+        <com.lion.material.widget.DrawerButton
+            android:id="@+id/header_left"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:enabled="false"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:src="@drawable/ic_launcher"
-            material:widget_animColor="#aa9c27b0"
+            material:widget_animColor="@color/color_anim_white"
+            material:widget_delayclick="false"
             material:widget_type="left" />
 
         <TextView
@@ -27,70 +27,126 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/main_title" />
+            android:text="@string/ldrawer_title" />
 
-        <com.lion.material.widget.LButton
+        <com.lion.material.widget.DrawerButton
+            android:id="@+id/header_right"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:text="@string/main_setting"
-            android:textColor="@color/color_normal"
-            android:textSize="12sp"
-            material:widget_animColor="#1affffff"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            material:widget_animColor="@color/color_anim_white"
+            material:widget_delayclick="false"
             material:widget_type="right" />
     </LinearLayout>
 
-    <FrameLayout
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <ScrollView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
-            <LinearLayout
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <com.lion.material.widget.PreferenceNormal
+                        android:id="@+id/main_item_lbutton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        material:preference_show_divider="true"
+                        material:preference_title="@string/lbutton_title" />
+
+                    <com.lion.material.widget.PreferenceNormal
+                        android:id="@+id/main_item_limagebutton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        material:preference_show_divider="true"
+                        material:preference_title="@string/limagebutton_title" />
+
+                    <com.lion.material.widget.PreferenceNormal
+                        android:id="@+id/main_item_lframelayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        material:preference_show_divider="true"
+                        material:preference_title="@string/lframelayout_title" />
+
+                    <com.lion.material.widget.PreferenceNormal
+                        android:id="@+id/main_item_lpreference"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        material:preference_show_divider="false"
+                        material:preference_title="@string/lpreference_title" />
+                </LinearLayout>
+            </ScrollView>
+
+            <com.lion.material.widget.LImageButton
+                android:id="@+id/main_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_marginBottom="25dp"
+                android:layout_marginRight="25dp"
+                material:widget_animColor="@color/color_anim_black"
+                material:widget_background="@drawable/icon_add" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/main_menu_left"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:background="#ffffff"
+            android:orientation="vertical" >
+
+            <com.lion.material.widget.PreferenceNormal
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                material:preference_show_divider="true"
+                material:preference_title="@string/ldrawer_item1" />
 
-                <com.lion.material.widget.PreferenceNormal
-                    android:id="@+id/main_item_lbutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    material:preference_show_divider="true"
-                    material:preference_title="@string/main_item_lbutton" />
+            <com.lion.material.widget.PreferenceNormal
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                material:preference_show_divider="true"
+                material:preference_title="@string/ldrawer_item2" />
 
-                <com.lion.material.widget.PreferenceNormal
-                    android:id="@+id/main_item_limagebutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    material:preference_show_divider="true"
-                    material:preference_title="@string/main_item_limagebutton" />
+            <com.lion.material.widget.PreferenceNormal
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                material:preference_show_divider="true"
+                material:preference_title="@string/ldrawer_item3" />
 
-                <com.lion.material.widget.PreferenceNormal
-                    android:id="@+id/main_item_lframelayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    material:preference_show_divider="true"
-                    material:preference_title="@string/main_item_lframelayout" />
+            <com.lion.material.widget.PreferenceNormal
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                material:preference_show_divider="true"
+                material:preference_title="@string/ldrawer_item4" />
+        </LinearLayout>
 
-                <com.lion.material.widget.PreferenceNormal
-                    android:id="@+id/main_item_lpreference"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    material:preference_show_divider="false"
-                    material:preference_title="@string/main_item_lpreference" />
-            </LinearLayout>
-        </ScrollView>
+        <LinearLayout
+            android:id="@+id/main_menu_right"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="#00ffff"
+            android:orientation="vertical" >
 
-        <com.lion.material.widget.LImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|bottom"
-            android:layout_marginBottom="20dp"
-            android:layout_marginRight="20dp"
-            material:widget_background="@drawable/icon_add" />
-    </FrameLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/ldrawer_right_content"
+                android:textColor="@color/color_black87" />
+        </LinearLayout>
+    </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>

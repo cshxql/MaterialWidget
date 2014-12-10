@@ -2,53 +2,110 @@ package com.lion.material.demo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.DrawerLayout.DrawerListener;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.lion.material.demo.R;
+import com.lion.material.widget.DrawerButton;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements OnClickListener {
+	private String TAG = "MainActivity";
+	private DrawerLayout mDrawerLayout;
+	private View mLeftGravityView;
+	private DrawerButton drawerButtonLeft;
+	private DrawerButton drawerButtonRight;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		findViewById(R.id.main_item_lbutton).setOnClickListener(
-				new OnClickListener() {
-
-					@Override
-					public void onClick(View arg0) {
-						startActivity(new Intent(mContext,
-								LButtonActivity.class));
-					}
-				});
-		findViewById(R.id.main_item_limagebutton).setOnClickListener(
-				new OnClickListener() {
-
-					@Override
-					public void onClick(View arg0) {
-						startActivity(new Intent(mContext,
-								LImageButtonActivity.class));
-					}
-				});
-		findViewById(R.id.main_item_lframelayout).setOnClickListener(
-				new OnClickListener() {
-
-					@Override
-					public void onClick(View arg0) {
-						startActivity(new Intent(mContext,
-								LFrameLayoutActivity.class));
-					}
-				});
-		findViewById(R.id.main_item_lpreference).setOnClickListener(
-				new OnClickListener() {
-
-					@Override
-					public void onClick(View v) {
-						startActivity(new Intent(mContext,
-								LPreferenceActivity.class));
-					}
-				});
+		initView();
 	}
 
+	private void initView() {
+		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+		// init left headerButton
+		drawerButtonLeft = (DrawerButton) findViewById(R.id.header_left);
+		drawerButtonLeft.setOnClickListener(this);
+		// init right headerButton
+		drawerButtonRight = (DrawerButton) findViewById(R.id.header_right);
+		drawerButtonRight.setOnClickListener(this);
+		mLeftGravityView = findViewById(R.id.main_menu_left);
+		findViewById(R.id.main_add).setOnClickListener(this);
+		findViewById(R.id.main_item_lbutton).setOnClickListener(this);
+		findViewById(R.id.main_item_limagebutton).setOnClickListener(this);
+		findViewById(R.id.main_item_lframelayout).setOnClickListener(this);
+		findViewById(R.id.main_item_lpreference).setOnClickListener(this);
+
+		mDrawerLayout.setDrawerListener(new DrawerListener() {
+
+			@Override
+			public void onDrawerStateChanged(int drawerStatus) {
+			}
+
+			@Override
+			public void onDrawerSlide(View v, float progress) {
+				if (v == mLeftGravityView) {
+					drawerButtonLeft.onDrag(
+							mDrawerLayout.isDrawerOpen(Gravity.LEFT), progress);
+				} else {
+					drawerButtonRight.onDrag(
+							mDrawerLayout.isDrawerOpen(Gravity.RIGHT), progress);
+				}
+
+			}
+
+			@Override
+			public void onDrawerOpened(View v) {
+			}
+
+			@Override
+			public void onDrawerClosed(View v) {
+			}
+		});
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.main_add:
+		case R.id.header_left:
+			if (mDrawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+				mDrawerLayout.closeDrawer(Gravity.RIGHT);
+			}
+			if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
+				mDrawerLayout.closeDrawer(Gravity.LEFT);
+			} else {
+				mDrawerLayout.openDrawer(Gravity.LEFT);
+			}
+			break;
+		case R.id.header_right:
+			if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
+				mDrawerLayout.closeDrawer(Gravity.LEFT);
+			}
+			if (mDrawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+				mDrawerLayout.closeDrawer(Gravity.RIGHT);
+			} else {
+				mDrawerLayout.openDrawer(Gravity.RIGHT);
+			}
+			break;
+		case R.id.main_item_lbutton:
+			startActivity(new Intent(mContext, LButtonActivity.class));
+			break;
+		case R.id.main_item_limagebutton:
+			startActivity(new Intent(mContext, LImageButtonActivity.class));
+			break;
+		case R.id.main_item_lframelayout:
+			startActivity(new Intent(mContext, LFrameLayoutActivity.class));
+			break;
+		case R.id.main_item_lpreference:
+			startActivity(new Intent(mContext, LPreferenceActivity.class));
+			break;
+		default:
+			break;
+		}
+	}
 }
