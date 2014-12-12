@@ -26,6 +26,7 @@
         <activity android:name="com.lion.material.demo.activity.LImageButtonActivity" />
         <activity android:name="com.lion.material.demo.activity.LFrameLayoutActivity" />
         <activity android:name="com.lion.material.demo.activity.LPreferenceActivity" />
+        <activity android:name="com.lion.material.demo.activity.LDialogActivity" />
     </application>
 
 </manifest>

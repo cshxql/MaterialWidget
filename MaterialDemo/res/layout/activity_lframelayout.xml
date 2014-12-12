@@ -19,7 +19,6 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:src="@drawable/icon_header_back"
-            android:text="Back"
             material:widget_animColor="#aa9c27b0"
             material:widget_type="left" />
 

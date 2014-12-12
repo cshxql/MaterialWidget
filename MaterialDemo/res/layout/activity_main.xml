@@ -12,7 +12,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
-        <com.lion.material.widget.DrawerButton
+        <com.lion.material.widget.LDrawerButton
             android:id="@+id/header_left"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -29,7 +29,7 @@
             android:layout_weight="1"
             android:text="@string/ldrawer_title" />
 
-        <com.lion.material.widget.DrawerButton
+        <com.lion.material.widget.LDrawerButton
             android:id="@+id/header_right"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -85,6 +85,12 @@
                         android:layout_height="wrap_content"
                         material:preference_show_divider="false"
                         material:preference_title="@string/lpreference_title" />
+                    <com.lion.material.widget.PreferenceNormal
+                        android:id="@+id/main_item_ldialog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        material:preference_show_divider="false"
+                        material:preference_title="@string/ldialog_title" />
                 </LinearLayout>
             </ScrollView>
 

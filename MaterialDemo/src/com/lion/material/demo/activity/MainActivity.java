@@ -9,14 +9,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.lion.material.demo.R;
-import com.lion.material.widget.DrawerButton;
+import com.lion.material.widget.LDrawerButton;
 
 public class MainActivity extends BaseActivity implements OnClickListener {
 	private String TAG = "MainActivity";
 	private DrawerLayout mDrawerLayout;
 	private View mLeftGravityView;
-	private DrawerButton drawerButtonLeft;
-	private DrawerButton drawerButtonRight;
+	private LDrawerButton drawerButtonLeft;
+	private LDrawerButton drawerButtonRight;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +28,10 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	private void initView() {
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		// init left headerButton
-		drawerButtonLeft = (DrawerButton) findViewById(R.id.header_left);
+		drawerButtonLeft = (LDrawerButton) findViewById(R.id.header_left);
 		drawerButtonLeft.setOnClickListener(this);
 		// init right headerButton
-		drawerButtonRight = (DrawerButton) findViewById(R.id.header_right);
+		drawerButtonRight = (LDrawerButton) findViewById(R.id.header_right);
 		drawerButtonRight.setOnClickListener(this);
 		mLeftGravityView = findViewById(R.id.main_menu_left);
 		findViewById(R.id.main_add).setOnClickListener(this);
@@ -39,6 +39,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		findViewById(R.id.main_item_limagebutton).setOnClickListener(this);
 		findViewById(R.id.main_item_lframelayout).setOnClickListener(this);
 		findViewById(R.id.main_item_lpreference).setOnClickListener(this);
+		findViewById(R.id.main_item_ldialog).setOnClickListener(this);
 
 		mDrawerLayout.setDrawerListener(new DrawerListener() {
 
@@ -103,6 +104,9 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			break;
 		case R.id.main_item_lpreference:
 			startActivity(new Intent(mContext, LPreferenceActivity.class));
+			break;
+		case R.id.main_item_ldialog:
+			startActivity(new Intent(mContext, LDialogActivity.class));
 			break;
 		default:
 			break;

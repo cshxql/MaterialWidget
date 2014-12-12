@@ -44,5 +44,12 @@
     <string name="ldrawer_item3">MenuItem Three</string>
     <string name="ldrawer_item4">MenuItem Four</string>
     <string name="ldrawer_right_content">This is right DrawerLayout</string>
+    <!-- LDialog -->
+    <string name="ldialog_title">Material Dialog</string>
+    <string name="ldialog_system">System Dialog</string>
+    <string name="ldialog_normal">Normal Dialog</string>
+    <string name="ldialog_normal_longmsg">Normal Dialog width long message</string>
+    <string name="ldialog_list">List Dialog</string>
+    <string name="ldialog_single_choice">Single choice Dialog</string>
 
 </resources>

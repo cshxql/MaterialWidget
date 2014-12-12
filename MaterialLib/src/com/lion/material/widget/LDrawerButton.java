@@ -10,8 +10,8 @@ import com.lion.material.R;
 import com.lion.material.extra.MaterialStyle;
 import com.lion.material.widget.LButton;
 
-public class DrawerButton extends LButton {
-	private final String TAG = "DrawerButton";
+public class LDrawerButton extends LButton {
+	private final String TAG = "LDrawerButton";
 
 	private Paint mLinePaint = new Paint();
 	private int mCenterX;
@@ -33,7 +33,7 @@ public class DrawerButton extends LButton {
 	private boolean mIsLeftGravity = true;
 	private int mBaseDegrees = 0;
 
-	public DrawerButton(Context context, AttributeSet attrs) {
+	public LDrawerButton(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		mLinePaint.setColor(0xffffffff);
 		if (attrs != null) {
