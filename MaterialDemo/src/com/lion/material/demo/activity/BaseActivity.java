@@ -1,12 +1,12 @@
 package com.lion.material.demo.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Window;
 
-public class BaseActivity extends Activity {
+public class BaseActivity extends FragmentActivity {
 	protected Context mContext;
 
 	@Override

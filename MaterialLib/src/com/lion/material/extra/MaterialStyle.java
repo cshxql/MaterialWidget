@@ -77,8 +77,7 @@ public class MaterialStyle {
 	public static final int TYPE_NORMAL_BTN = 0;
 	public static final int TYPE_HEADBAR_BACK_BTN = 1;
 	public static final int TYPE_HEADBAR_RIGHT_BTN = 2;
-	public static final int TYPE_TAB_ITEM = 3;
-	public static final int TYPE_HEADER_CENTER_BTN = 4;
+	public static final int TYPE_HEADER_CENTER_BTN = 3;
 
 	private int mAnimFullColor = -1;
 
@@ -108,7 +107,7 @@ public class MaterialStyle {
 			mNeedDelayClick = a.getBoolean(
 					R.styleable.LButtonStyle_widget_delayclick, true);
 			mAnimFullColor = a.getInt(
-					R.styleable.LButtonStyle_widget_animColor, 0x1a000000);
+					R.styleable.LButtonStyle_widget_animColor, -1);
 			mBackgroundDrawable = a
 					.getDrawable(R.styleable.LButtonStyle_widget_background);
 			if (mBackgroundDrawable != null) {
@@ -153,7 +152,7 @@ public class MaterialStyle {
 			mCircleRadius = heigh / 2f;
 			mCircleRadiusMax = width;// / 2.5f;
 			if (mAnimFullColor == -1) {
-				mAnimFullColor = 0x1affffff;
+				mAnimFullColor = 0x30ffffff;
 			}
 			break;
 		case TYPE_NORMAL_BTN:
@@ -165,24 +164,14 @@ public class MaterialStyle {
 				mCircleRadiusMax = Math.max(width, heigh) / 2;
 			}
 			if (mAnimFullColor == -1) {
-				mAnimFullColor = 0x1a000000;
-			}
-			break;
-		case TYPE_TAB_ITEM:
-			// mNeedDelayClick = false;
-			mAnimColorAlphaMax = (int) (255 * 0.8f);
-			mCircleRadius = Math.min(width, heigh) / 2f;
-			mCircleRadiusMax = Math.max(width, heigh) / 2;// / 2.5f;
-			// mAnimBottomPaint.setColor(0x00ffffff);
-			if (mAnimFullColor == -1) {
-				mAnimFullColor = 0x1affffff;
+				mAnimFullColor = 0x30000000;
 			}
 			break;
 		case TYPE_HEADER_CENTER_BTN:
 			mCircleRadius = Math.min(width, heigh) / 4f;
 			mCircleRadiusMax = Math.max(width, heigh) / 2;
 			if (mAnimFullColor == -1) {
-				mAnimFullColor = 0x1a000000;
+				mAnimFullColor = 0x30ffffff;
 			}
 			break;
 		}
@@ -236,11 +225,11 @@ public class MaterialStyle {
 		}
 		canvas.setDrawFilter(drawFilter);
 		canvas.save();
-//		Log.e("LButton", "status-->" + status + " Circle.Alpha-->"
-//				+ mCirclePaint.getAlpha() + " Bottom.Alpha-->"
-//				+ mAnimBottomPaint.getAlpha() + " Circle.Color-->"
-//				+ mCirclePaint.getColor() + " bottomColor-->"
-//				+ mAnimBottomPaint.getColor() + " mCirR-->" + mCircleRadius);
+		// Log.e("LButton", "status-->" + status + " Circle.Alpha-->"
+		// + mCirclePaint.getAlpha() + " Bottom.Alpha-->"
+		// + mAnimBottomPaint.getAlpha() + " Circle.Color-->"
+		// + mCirclePaint.getColor() + " bottomColor-->"
+		// + mAnimBottomPaint.getColor() + " mCirR-->" + mCircleRadius);
 		if (mBackgroundDrawable != null) {
 			mBackgroundDrawable.setBounds(0, 0, getWidth(), getHeight());
 			mBackgroundDrawable.draw(canvas);
@@ -269,10 +258,6 @@ public class MaterialStyle {
 					canvas.drawPaint(mAnimBottomPaint);
 				}
 				break;
-			case TYPE_TAB_ITEM:
-				canvas.drawCircle(getWidth() / 2, getHeight() / 2,
-						Math.max(getWidth(), getHeight()) / 2, mAnimBottomPaint);
-				break;
 			case TYPE_HEADER_CENTER_BTN:
 				canvas.drawCircle(getWidth() / 2, getHeight() / 2,
 						Math.max(getWidth(), getHeight()) / 2, mAnimBottomPaint);
@@ -283,68 +268,64 @@ public class MaterialStyle {
 		case STATUS_ANIM_FAST:
 			switch (type) {
 			case TYPE_HEADBAR_BACK_BTN:
-				if (mBackgroundDrawable == null && mBackgroundColor == 0) {
-					mPath.reset();
-					mPath.addCircle(0, getHeight() / 2, mCircleRadius,
-							Direction.CCW);
-					canvas.drawPath(mPath, mCirclePaint);
-					canvas.clipPath(mPath, Op.XOR);
-					canvas.drawCircle(0, getHeight() / 2, mCircleRadiusMax,
-							mAnimBottomPaint);
-				} else {
-					canvas.drawCircle(0, getHeight() / 2, mCircleRadius,
-							mAnimBottomPaint);
-				}
+				// if (mBackgroundDrawable == null && mBackgroundColor == 0) {
+				mPath.reset();
+				mPath.addCircle(0, getHeight() / 2, mCircleRadius,
+						Direction.CCW);
+				canvas.drawPath(mPath, mCirclePaint);
+				canvas.clipPath(mPath, Op.XOR);
+				canvas.drawCircle(0, getHeight() / 2, mCircleRadiusMax,
+						mAnimBottomPaint);
+				// } else {
+				// canvas.drawCircle(0, getHeight() / 2, mCircleRadius,
+				// mAnimBottomPaint);
+				// }
 				break;
 			case TYPE_HEADBAR_RIGHT_BTN:
-				if (mBackgroundDrawable == null && mBackgroundColor == 0) {
-					mPath.reset();
-					mPath.addCircle(getWidth(), getHeight() / 2, mCircleRadius,
-							Direction.CCW);
-					canvas.drawPath(mPath, mCirclePaint);
-					canvas.clipPath(mPath, Op.XOR);
-					canvas.drawCircle(getWidth(), getHeight() / 2,
-							mCircleRadiusMax, mAnimBottomPaint);
-				} else {
-					canvas.drawCircle(getWidth(), getHeight() / 2,
-							mCircleRadius, mAnimBottomPaint);
-				}
+				// if (mBackgroundDrawable == null && mBackgroundColor == 0) {
+				mPath.reset();
+				mPath.addCircle(getWidth(), getHeight() / 2, mCircleRadius,
+						Direction.CCW);
+				canvas.drawPath(mPath, mCirclePaint);
+				canvas.clipPath(mPath, Op.XOR);
+				canvas.drawCircle(getWidth(), getHeight() / 2,
+						mCircleRadiusMax, mAnimBottomPaint);
+				// } else {
+				// canvas.drawCircle(getWidth(), getHeight() / 2,
+				// mCircleRadius, mAnimBottomPaint);
+				// }
 				break;
 			case TYPE_NORMAL_BTN:
-				if (mBackgroundDrawable == null && mBackgroundColor == 0) {
-					mPath.reset();
-					mPath.addCircle(actionDownX, actionDownY, mCircleRadius,
-							Direction.CCW);
-					canvas.drawPath(mPath, mCirclePaint);
-					canvas.clipPath(mPath, Op.XOR);
-					if (mAnimMode == SHAPE_MODE_EQUAL) {
-						canvas.drawCircle(getWidth() / 2, getHeight() / 2,
-								mCircleRadiusMax, mAnimBottomPaint);
-					} else {
-						canvas.drawPaint(mAnimBottomPaint);
-					}
-				} else {
-					canvas.drawCircle(actionDownX, actionDownY, mCircleRadius,
-							mAnimBottomPaint);
-				}
-				break;
-			case TYPE_TAB_ITEM:
-				canvas.drawCircle(getWidth() / 2, getHeight() / 2,
-						mCircleRadius, mAnimBottomPaint);
-				break;
-			case TYPE_HEADER_CENTER_BTN:
-				if (mBackgroundDrawable == null && mBackgroundColor == 0) {
-					mPath.reset();
-					mPath.addCircle(getWidth() / 2, getHeight() / 2,
-							mCircleRadius, Direction.CCW);
-					canvas.drawPath(mPath, mCirclePaint);
-					canvas.clipPath(mPath, Op.XOR);
+				// if (mBackgroundDrawable == null && mBackgroundColor == 0) {
+				mPath.reset();
+				mPath.addCircle(actionDownX, actionDownY, mCircleRadius,
+						Direction.CCW);
+				canvas.drawPath(mPath, mCirclePaint);
+				canvas.clipPath(mPath, Op.XOR);
+				if (mAnimMode == SHAPE_MODE_EQUAL) {
 					canvas.drawCircle(getWidth() / 2, getHeight() / 2,
 							mCircleRadiusMax, mAnimBottomPaint);
 				} else {
-					canvas.drawCircle(getWidth() / 2, getHeight() / 2,
-							mCircleRadius, mAnimBottomPaint);
+					canvas.drawPaint(mAnimBottomPaint);
 				}
+				// } else {
+				// canvas.drawCircle(actionDownX, actionDownY, mCircleRadius,
+				// mAnimBottomPaint);
+				// }
+				break;
+			case TYPE_HEADER_CENTER_BTN:
+				// if (mBackgroundDrawable == null && mBackgroundColor == 0) {
+				mPath.reset();
+				mPath.addCircle(getWidth() / 2, getHeight() / 2, mCircleRadius,
+						Direction.CCW);
+				canvas.drawPath(mPath, mCirclePaint);
+				canvas.clipPath(mPath, Op.XOR);
+				canvas.drawCircle(getWidth() / 2, getHeight() / 2,
+						mCircleRadiusMax, mAnimBottomPaint);
+				// } else {
+				// canvas.drawCircle(getWidth() / 2, getHeight() / 2,
+				// mCircleRadius, mAnimBottomPaint);
+				// }
 				break;
 			}
 			break;
@@ -365,10 +346,6 @@ public class MaterialStyle {
 				} else {
 					canvas.drawPaint(mAnimBottomPaint);
 				}
-				break;
-			case TYPE_TAB_ITEM:
-				canvas.drawCircle(getWidth() / 2, getHeight() / 2,
-						mCircleRadius, mAnimBottomPaint);
 				break;
 			case TYPE_HEADER_CENTER_BTN:
 				canvas.drawCircle(getWidth() / 2, getHeight() / 2,
@@ -465,9 +442,9 @@ public class MaterialStyle {
 			}
 		}
 	}
-	
-	public void dispatchKeyEvent(){
-		
+
+	public void dispatchKeyEvent() {
+
 	}
 
 	public void onTouchEvent(MotionEvent event) {

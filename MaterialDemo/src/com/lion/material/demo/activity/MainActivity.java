@@ -40,6 +40,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		findViewById(R.id.main_item_lframelayout).setOnClickListener(this);
 		findViewById(R.id.main_item_lpreference).setOnClickListener(this);
 		findViewById(R.id.main_item_ldialog).setOnClickListener(this);
+		findViewById(R.id.main_item_ltab).setOnClickListener(this);
 
 		mDrawerLayout.setDrawerListener(new DrawerListener() {
 
@@ -107,6 +108,9 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			break;
 		case R.id.main_item_ldialog:
 			startActivity(new Intent(mContext, LDialogActivity.class));
+			break;
+		case R.id.main_item_ltab:
+			startActivity(new Intent(mContext, LTabActivity.class));
 			break;
 		default:
 			break;

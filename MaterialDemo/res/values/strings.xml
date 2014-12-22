@@ -51,5 +51,8 @@
     <string name="ldialog_normal_longmsg">Normal Dialog width long message</string>
     <string name="ldialog_list">List Dialog</string>
     <string name="ldialog_single_choice">Single choice Dialog</string>
+     <!-- LTab -->
+    <string name="ltab_title">Material TabIndicator</string>
+    
 
 </resources>

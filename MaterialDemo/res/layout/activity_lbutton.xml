@@ -20,7 +20,6 @@
             android:paddingRight="10dp"
             android:text="@string/lbutton_back"
             android:textColor="@color/color_normal"
-            material:widget_animColor="@color/color_anim_white"
             material:widget_type="left" />
 
         <TextView

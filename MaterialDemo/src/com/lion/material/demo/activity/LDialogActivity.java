@@ -1,6 +1,5 @@
 package com.lion.material.demo.activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,7 +12,7 @@ import com.lion.material.demo.R;
 import com.lion.material.dialog.LAlertDialog;
 import com.lion.material.dialog.LDialogListBuilder;
 
-public class LDialogActivity extends Activity implements OnClickListener {
+public class LDialogActivity extends BaseActivity implements OnClickListener {
 	private Context mContext;
 	private int mSelectedIndex = 0;
 

@@ -10,8 +10,8 @@
     <color name="color_anim_lick_header">#1d311b92</color>
     <color name="color_black87">#de000000</color>
     <color name="color_black54">#8a000000</color>
-    <color name="color_anim_black">#1d000000</color>
-    <color name="color_anim_white">#1dffffff</color>
+    <color name="color_anim_black">#30000000</color>
+    <color name="color_anim_white">#30ffffff</color>
     <color name="list_diver_bg">#dcdcdc</color>
     <color name="preference_title_text_disable">#3d000000</color>
     <color name="preference_title_text_normal">#de000000</color>

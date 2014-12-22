@@ -41,8 +41,11 @@ public class LDrawerButton extends LButton {
 					R.styleable.LButtonStyle);
 			mIsLeftGravity = a.getInt(R.styleable.LButtonStyle_widget_type,
 					MaterialStyle.TYPE_HEADBAR_BACK_BTN) != MaterialStyle.TYPE_HEADBAR_RIGHT_BTN;
+			setDelayClick(a.getBoolean(
+					R.styleable.LButtonStyle_widget_delayclick, false));
 			mBaseDegrees = mIsLeftGravity ? 0 : 180;
 			a.recycle();
+
 		}
 	}
 

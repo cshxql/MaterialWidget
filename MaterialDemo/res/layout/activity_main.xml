@@ -85,12 +85,20 @@
                         android:layout_height="wrap_content"
                         material:preference_show_divider="false"
                         material:preference_title="@string/lpreference_title" />
+
                     <com.lion.material.widget.PreferenceNormal
                         android:id="@+id/main_item_ldialog"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         material:preference_show_divider="false"
                         material:preference_title="@string/ldialog_title" />
+
+                    <com.lion.material.widget.PreferenceNormal
+                        android:id="@+id/main_item_ltab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        material:preference_show_divider="false"
+                        material:preference_title="@string/ltab_title" />
                 </LinearLayout>
             </ScrollView>
 

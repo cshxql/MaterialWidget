@@ -26,11 +26,6 @@ import com.lion.material.R;
 import com.lion.material.widget.LButton;
 import com.lion.material.widget.LImageButton;
 
-/**
- * 自定义dialog的逻辑处理类。 根据传进来的参数定制dialog样式。
- * 
- * @author yunnan，google
- */
 public class LDialogController {
 	private final DialogInterface mDialogInterface;
 	private final Window mWindow;
@@ -45,21 +40,21 @@ public class LDialogController {
 	private CharSequence mButtonNegativeText;
 	private Message mButtonNegativeMessage;
 
-	private ScrollView mScrollView; // 内容区域的scrollView
+	private ScrollView mScrollView;
 
-	private int mIconId = -1; // 标题提示图标
+	private int mIconId = -1;
 	private Drawable mIcon;
 	private ImageView mIconView;
 	public LImageButton mCloseImageView;
 
-	private TextView mTitleView; // 标题title
-	private CharSequence mTitle; // 标题信息
+	private TextView mTitleView;
+	private CharSequence mTitle; 
 
-	private TextView mMessageView; // 提示信息textView
-	private CharSequence mMessage; // 提示信息
+	private TextView mMessageView; 
+	private CharSequence mMessage; 
 
-	public boolean clickPositiveBtnDismiss; // 点击确认按钮是否让窗体消失
-	public boolean centerMsg; // 是否让显示文字信息居中
+	public boolean clickPositiveBtnDismiss; 
+	public boolean centerMsg; 
 
 	private Handler mHandler;
 
@@ -129,9 +124,7 @@ public class LDialogController {
 		mButtonPositive.setEnabled(enable);
 	}
 
-	/**
-	 * 根据所有得到的参数，开始定制dialog
-	 */
+	
 	public void installContent() {
 		/* We use a custom title so never request a window title */
 		mWindow.requestFeature(Window.FEATURE_NO_TITLE);
@@ -154,13 +147,6 @@ public class LDialogController {
 
 	}
 
-	/**
-	 * 判断是否有标题
-	 * 
-	 * @param topPanel
-	 *            ，标题部分容器
-	 * @return 有则返回true，否则返回false
-	 */
 	private boolean setupTitle() {
 		boolean hasTitle = true;
 
@@ -177,7 +163,7 @@ public class LDialogController {
 		if (hasTextTitle) {
 			mTitleView = (TextView) mWindow.findViewById(R.id.alertTitle);
 			mTitleView.setText(mTitle);
-			if (mIconId > 0) { // title小图标
+			if (mIconId > 0) { 
 				mIconView.setImageResource(mIconId);
 			} else if (mIcon != null) {
 				mIconView.setImageDrawable(mIcon);
@@ -203,12 +189,7 @@ public class LDialogController {
 		return hasTitle;
 	}
 
-	/**
-	 * 初始化内容区域
-	 * 
-	 * @param contentPanel
-	 *            内容区域容器
-	 */
+	
 	private void setupContent() {
 		mScrollView = (ScrollView) mWindow.findViewById(R.id.scrollView);
 		mScrollView.setFocusable(false);
@@ -229,11 +210,7 @@ public class LDialogController {
 		return 6;
 	}
 
-	/**
-	 * 检查是否需要初始化button
-	 * 
-	 * @return
-	 */
+	
 	private boolean setupButtons() {
 		int BIT_BUTTON_POSITIVE = 1;
 		int BIT_BUTTON_NEGATIVE = 2;

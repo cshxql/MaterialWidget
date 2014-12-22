@@ -24,7 +24,7 @@
         android:id="@+id/dialog_listview_adapter_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="4dp"
         android:scaleType="fitCenter"
         android:src="@drawable/material_selector_dialog_list_checkbox"
         android:visibility="gone" />
